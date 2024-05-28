@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativelayout"
+    android:background="@drawable/rainbow2">
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/nuttron"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/nuttron"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+    <VideoView
+        android:id="@+id/bangtruyen"
+        android:layout_width="match_parent"
+        android:layout_height="201dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="0dp" />
+
+    <ImageView
+        android:id="@+id/tomatoo_red"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/tomato_red100"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/tomato_blue"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/tomato_blue100"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/tomato_green"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/tomato_green100"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/red"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textColor="#FF0000"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="300dp"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:background="@drawable/vienview" />
+
+    <TextView
+        android:id="@+id/blue"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:textColor="#3366CC"
+        android:layout_marginTop="380dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@drawable/vienview" />
+
+    <TextView
+        android:id="@+id/green"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="460dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textColor="#33CC33"
+        android:background="@drawable/vienview" />
+
+    <TextView
+        android:id="@+id/textsum"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/vienview"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:text="TỔNG"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/sum"
+        android:layout_width="150dp"
+        android:layout_height="140dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="360dp"
+        android:background="@drawable/vienview"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="50dp"/>
+
+    <TextView
+        android:id="@+id/speed"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="150dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:background="@drawable/tanggiam"/>
+    <Button
+        android:id="@+id/tang"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="150dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/up"
+        android:layout_alignParentEnd="true"/>
+    <Button
+        android:id="@+id/giam"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="150dp"
+        android:layout_marginEnd="70dp"
+        android:background="@drawable/down"/>
+    <Button
+        android:id="@+id/onoff"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:text="ON"
+        android:background="@drawable/nut_onoff"
+        android:layout_marginBottom="50dp"/>
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="50dp"
+        android:text="RESET"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@drawable/nut_reset"
+        />
+</RelativeLayout>
