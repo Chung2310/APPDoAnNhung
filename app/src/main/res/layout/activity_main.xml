@@ -34,7 +34,7 @@
     <VideoView
         android:id="@+id/bangtruyen"
         android:layout_width="match_parent"
-        android:layout_height="201dp"
+        android:layout_height="180dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -77,131 +77,152 @@
 
     <TextView
         android:id="@+id/red"
-        android:layout_width="200dp"
+        android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:textColor="#FF0000"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="300dp"
-        android:textStyle="bold"
-        android:textSize="30dp"
+        android:layout_marginEnd="21dp"
+        android:layout_toStartOf="@+id/textsum"
+        android:background="@drawable/vienview"
         android:gravity="center"
-        android:background="@drawable/vienview" />
+        android:textColor="#FF0000"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/bangtruyen"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/blue"
-        android:layout_width="200dp"
+        android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
-        android:textColor="#3366CC"
-        android:layout_marginTop="380dp"
-        android:textSize="30dp"
-        android:textStyle="bold"
+        android:layout_marginEnd="21dp"
+        android:layout_toStartOf="@+id/sum"
+        android:background="@drawable/vienview"
         android:gravity="center"
-        android:background="@drawable/vienview" />
+        android:textColor="#3366CC"
+        android:layout_below="@+id/red"
+        android:textSize="30dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/green"
-        android:layout_width="200dp"
+        android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="460dp"
+        android:layout_marginEnd="21dp"
+        android:layout_toStartOf="@+id/sum"
+        android:background="@drawable/vienview"
         android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="30dp"
         android:textColor="#33CC33"
-        android:background="@drawable/vienview" />
+        android:textSize="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/blue"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textsum"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/bangtruyen"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/vienview"
         android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="30dp"
         android:text="TỔNG"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/sum"
         android:layout_width="150dp"
         android:layout_height="140dp"
+        android:layout_below="@+id/textsum"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginTop="360dp"
         android:background="@drawable/vienview"
         android:gravity="center"
-        android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="50dp"/>
-
-    <TextView
-        android:id="@+id/speed"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+    <RelativeLayout
+        android:id="@+id/layoutspeed"
+        android:layout_marginTop="30dp"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="150dp"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:background="@drawable/tanggiam"/>
-    <Button
-        android:id="@+id/tang"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="125dp"
-        android:layout_marginBottom="150dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/up"
-        android:layout_alignParentEnd="true"/>
-    <Button
-        android:id="@+id/giam"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="150dp"
-        android:layout_marginEnd="70dp"
-        android:background="@drawable/down"/>
-    <Button
-        android:id="@+id/onoff"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:text="ON"
-        android:background="@drawable/nut_onoff"
-        android:layout_marginBottom="50dp"/>
-    <Button
-        android:id="@+id/reset"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="50dp"
-        android:text="RESET"
-        android:textColor="@color/white"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:background="@drawable/nut_reset"
-        />
+        android:orientation="horizontal"
+        android:layout_below="@+id/green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/speed"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@drawable/tanggiam"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/tang"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toLeftOf="@+id/giam"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/up" />
+
+        <Button
+            android:id="@+id/giam"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/down" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+
+        android:layout_below="@+id/layoutspeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/onoff"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:text="ON"
+            android:background="@drawable/nut_onoff" />
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_alignParentEnd="true"
+            android:text="RESET"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/nut_reset"
+            />
+    </RelativeLayout>
+    <Button
+        android:id="@+id/btnlichsu"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="lịch sử"
+
+        android:background="@drawable/nuttron"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>
