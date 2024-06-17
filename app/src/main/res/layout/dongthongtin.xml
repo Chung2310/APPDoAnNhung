@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="horizontal"
-    android:background="@drawable/vienview"
+    android:background="@drawable/viendong"
     android:layout_height="match_parent">
     <LinearLayout
         android:orientation="vertical"
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="90dp">
         <TextView
-            android:background="@drawable/vienview"
+            android:background="@drawable/viendong"
             android:id="@+id/viewRed"
             android:textSize="30dp"
             android:textColor="#F11212"
@@ -43,7 +43,7 @@
             android:id="@+id/viewBlue"
             android:textColor="#0C8DF3"
             android:textSize="30dp"
-            android:background="@drawable/vienview"
+            android:background="@drawable/viendong"
             android:textStyle="bold"
             android:gravity="center"
             android:layout_weight="1"
@@ -53,7 +53,7 @@
             android:id="@+id/viewGreen"
             android:textColor="#0FDD17"
             android:textStyle="bold"
-            android:background="@drawable/vienview"
+            android:background="@drawable/viendong"
             android:layout_weight="1"
             android:gravity="center"
             android:textSize="30dp"

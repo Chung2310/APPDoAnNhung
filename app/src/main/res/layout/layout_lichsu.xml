@@ -17,7 +17,7 @@
         android:layout_centerHorizontal="true"
         android:padding="10dp"
         android:text="LỊCH SỬ "
-        android:textSize="50dp"
+        android:textSize="40dp"
         android:textStyle="bold" />
 
     <ListView
