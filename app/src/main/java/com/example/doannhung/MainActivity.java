@@ -252,21 +252,26 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 String message = "";
-                if (speed == 0) {
-                    Toast.makeText(MainActivity.this, "Hệ thống bật", Toast.LENGTH_LONG).show();
-                    button_onoff.setBackgroundResource(R.drawable.nut_onoff);
-                    isColorChanged = false;
-                    button_onoff.setText("Bật");
-                    relativeLayout.setBackgroundResource(R.drawable.rainbow2);
-                    chedo = 1;
+                if(speed < 5) {
+                    if (speed == 0) {
+                        Toast.makeText(MainActivity.this, "Hệ thống bật", Toast.LENGTH_LONG).show();
+                        button_onoff.setBackgroundResource(R.drawable.nut_onoff);
+                        isColorChanged = false;
+                        button_onoff.setText("Bật");
+                        relativeLayout.setBackgroundResource(R.drawable.rainbow2);
+                        chedo = 0;
+                    }
+                    speed++;
+                    String speed_st = String.valueOf(speed);
+                    textView_speed.setText("Tốc độ: " + speed_st + "m/s");
+                    StringBuilder st = new StringBuilder("{\"mode\"");
+                    st.append(":").append(chedo).append(",\"speed\":").append(speed).append(",\"red\":").append(red).append(",\"green\":").append(green).append(",\"blue\":").append(blue).append("}");
+                    message = String.valueOf(st);
+                    guiMQTT(message);
                 }
-                speed++;
-                String speed_st = String.valueOf(speed);
-                textView_speed.setText("Tốc độ: " + speed_st + "m/s");
-                StringBuilder st = new StringBuilder("{\"mode\"");
-                st.append(":").append(chedo).append(",\"speed\":").append(speed).append(",\"red\":").append(red).append(",\"green\":").append(green).append(",\"blue\":").append(blue).append("}");
-                message = String.valueOf(st);
-                guiMQTT(message);
+                else {
+                    Toast.makeText(MainActivity.this,"Tốc độ đã max !",Toast.LENGTH_LONG).show();
+                }
             }
         });
         button_reset.setOnClickListener(new View.OnClickListener() {
