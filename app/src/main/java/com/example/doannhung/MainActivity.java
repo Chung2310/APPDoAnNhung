@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
     VideoView videoView;
     boolean isColorChanged = false;
     Integer speed=3;
-    int chedo=1;
+    int chedo=0;
     int red,blue,green,redl,bluel,greenl;
     private String MQTTHOST = "ws://103.180.149.239:9001";
     private MqttAndroidClient client;
@@ -81,7 +81,6 @@ public class MainActivity extends Activity {
         chedo = sharedPreferences.getInt("mode",0);
         speed = sharedPreferences.getInt("speed",0);
         hienThi(red,green,blue,chedo,speed);
-
 
         thongtin_dtb = openOrCreateDatabase("qlthongtin.db", MODE_PRIVATE, null);
         try {
@@ -134,7 +133,7 @@ public class MainActivity extends Activity {
                     green = Integer.valueOf(arr[3]);
                     blue = Integer.valueOf(arr[4]);
 
-                    if (chedo == 1) {
+                    if (chedo == 0) {
                         button_onoff.setBackgroundResource(R.drawable.nut_onoff);
                         button_onoff.setText("Bật");
                         relativeLayout.setBackgroundResource(R.drawable.rainbow2);
@@ -149,17 +148,17 @@ public class MainActivity extends Activity {
                     }
                 }
                 boolean hasChanged = false;
-                if (redl != red) {
+                if (redl != red && red !=0) {
                     startConveyorAnimation(imageView_red);
                     redl = red;
                     hasChanged = true;
                 }
-                if (greenl != green) {
+                if (greenl != green && green!=0) {
                     startConveyorAnimation(imageView_green);
                     greenl = green;
                     hasChanged = true;
                 }
-                if (bluel != blue) {
+                if (bluel != blue && blue!=0) {
                     startConveyorAnimation(imageView_blue);
                     bluel = blue;
                     hasChanged = true;
@@ -192,9 +191,9 @@ public class MainActivity extends Activity {
                     button_onoff.setBackgroundResource(R.drawable.nut_onoff);
                     isColorChanged = false;
                     button_onoff.setText("Bật");
-                    chedo = 1;
+                    chedo = 0;
                     relativeLayout.setBackgroundResource(R.drawable.rainbow2);
-                    textView_speed.setText("Tốc Độ: " + speed + "m/s");
+                    textView_speed.setText("Tốc độ: " + speed + "m/s");
                     startVideo();
                     StringBuilder st = new StringBuilder("{\"mode\"");
                     st.append(":").append(chedo).append(",\"speed\":").append(speed).append(",\"red\":").append(red).append(",\"green\":").append(green).append(",\"blue\":").append(blue).append("}");
@@ -203,9 +202,9 @@ public class MainActivity extends Activity {
                     button_onoff.setBackgroundResource(R.drawable.nut_onoff2);
                     isColorChanged = true;
                     button_onoff.setText("Tắt");
-                    chedo = 0;
+                    chedo = 1;
                     relativeLayout.setBackgroundResource(R.drawable.rainbow);
-                    textView_speed.setText("Tốc độ: " + 0 + "m/s");
+                    textView_speed.setText("Tốc độ: " + speed + "m/s");
                     videoView.pause();
                     StringBuilder st = new StringBuilder("{\"mode\"");
                     st.append(":").append(chedo).append(",\"speed\":").append(speed).append(",\"red\":").append(red).append(",\"green\":").append(green).append(",\"blue\":").append(blue).append("}");
@@ -238,7 +237,7 @@ public class MainActivity extends Activity {
                         button_onoff.setText("Tắt");
                         relativeLayout.setBackgroundResource(R.drawable.rainbow);
                         videoView.pause();
-                        chedo = 0;
+                        chedo = 1;
                     }
                     StringBuilder st = new StringBuilder("{\"mode\"");
                     st.append(":").append(chedo).append(",\"speed\":").append(speed).append(",\"red\":").append(red).append(",\"green\":").append(green).append(",\"blue\":").append(blue).append("}");
@@ -278,7 +277,7 @@ public class MainActivity extends Activity {
                 red = redl = 0;
                 blue = bluel = 0;
                 green = greenl = 0;
-                chedo = 1;
+                chedo = 0;
                 textView_red.setText("0");
                 textView_blue.setText("0");
                 textView_green.setText("0");
@@ -293,7 +292,7 @@ public class MainActivity extends Activity {
                 editor.putInt("red",0);
                 editor.putInt("blue",0);
                 editor.putInt("green",0);
-                editor.putInt("mode",1);
+                editor.putInt("mode",0);
                 editor.putInt("speed",3);
                 editor.commit();
             }
@@ -418,12 +417,20 @@ public class MainActivity extends Activity {
         textView_blue.setText(String.valueOf(blue1));
         textView_speed.setText(String.valueOf("Tốc độ: " + speed1 + "m/s"));
         textView_sum.setText(String.valueOf(red1+blue1+green1));
-        if(mode1 == 1)
+        if(mode1 == 0)
         {
-            button_onoff.setText("Bật");
+            button_onoff.setBackgroundResource(R.drawable.nut_onoff2);
+            isColorChanged = false;
+            button_onoff.setText("Tắt");
+            relativeLayout.setBackgroundResource(R.drawable.rainbow2);
+            startVideo();
         }
         else {
-            button_onoff.setText("Tắt");
+            button_onoff.setText("Bật");
+            button_onoff.setBackgroundResource(R.drawable.nut_onoff);
+            isColorChanged = true;
+            relativeLayout.setBackgroundResource(R.drawable.rainbow);
+            videoView.pause();
         }
     }
     private boolean isDataDuplicate(int red, int blue, int green) {
